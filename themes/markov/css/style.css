@@ -104,3 +104,11 @@ a img.aligncenter {
 
 }
   
+/* MARK */
+
+body {
+    background: url(../img/front/bg.png) repeat;
+    font-family: 'Raleway', sans-serif;
+    background-size: 100%;
+}
+

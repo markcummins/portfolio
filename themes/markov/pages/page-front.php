@@ -15,22 +15,10 @@ Template Name: Front
         
         @import url('//fonts.googleapis.com/css?family=Raleway:400,300,600');
 
-        body {
-        background: url(https://www.brainpickings.org/wp-content/themes/brainpickings/images/bckgd_body.png);
-        font-family: 'Raleway', sans-serif;
-        }
-
         .img-responsive{
         width: 100%;  
         }
 
-        .nav{
-        position: fixed;
-        top:0px;
-        padding: 10px;
-        background-color: #FFF;
-        color: #AC4243;
-        }
         .no-pad{
         padding: 0px;
         margin: 0px;
@@ -42,26 +30,6 @@ Template Name: Front
         text-align: center;
         transition: .3s;
         }
-        
-        .header-wrapper{
-            position: relative;
-        }
-        
-        .header .btn {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            z-index: 999;
-        }
-        
-        #btn-animate-pfolio{
-            top: 46.5%;
-        }        
-        #btn-animate-blog{
-            top: 56.5%;
-        }
-
 
         /***********************
           OUTLINE BUTTONS
@@ -72,14 +40,12 @@ Template Name: Front
             padding: 12px 22px;
         }
         .btn-primary.outline {
-            border: 2px solid #D95050;
-            color: #D95050;
+            border: 2px solid #9C1D1D;
+            color: #9C1D1D;
         }
         .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
             color: #D95050;
-            border-color: #D95050;
-            -webkit-animation: bounce 1s;
-            animation: bounce 1s;
+            border-color: rgb(217, 80, 80);
         }
         .btn-primary.outline:active, .btn-primary.outline.active {
             border-color: #8e2d2e;
@@ -111,6 +77,107 @@ Template Name: Front
             display: none;
         }
         
+        .header-overlay{
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-overlay div{
+            overflow: hidden;
+            min-height: 180px;
+            padding: 20px;
+        }
+        
+        .header-overlay .btn{
+            margin: 10px;
+        }
+        
+        .nav-logo{
+            width: 90px;
+            padding: 4px 10px;
+        }
+
+        .nav {
+            padding: 4px;
+            text-align: center;
+            font-family: Raleway;
+            box-shadow: 2px 2px 8px -1px #333;
+            width: 100%;
+            display: none;
+        }
+        #nav-1 {
+          background: #AD4445;
+        }
+
+        .link-1 {
+          transition: 0.3s ease;
+          background: #AD4445
+          color: #ffffff;
+          font-size: 20px;
+          text-decoration: none;
+          border-top: 4px solid rgb(217, 80, 80);;
+          border-bottom: 4px solid rgb(217, 80, 80);;
+          padding: 8px 0;
+          margin: 0 14px;
+        }
+        .link-1:hover {
+          border-top: 4px solid #ffffff;
+          border-bottom: 4px solid #ffffff;
+          padding: 6px 0; 
+        }
+        
+        a.deco-none {
+            color:#FFF !important;
+            text-decoration:none;
+            cursor:pointer; 
+        }
+        
+        .portfolio{
+            display: none;   
+        }
+        
+        /* DATE */
+        
+        .date {
+            margin-top: 20px;
+            position: relative;
+            width: 70px;
+            color: #AD4445;
+        }
+
+        .day, .month, .year {
+        position: absolute;
+        }
+
+        .day { 
+        font-size: 30px;
+        top: 15px;
+        }
+
+        .month { 
+        top: 0;
+        left: 0;  
+        font-size: 18px;
+        }
+
+        .year { 
+        top: 14px;
+        right: 0;
+        font-size: 20px;
+        rotation: -90deg !important;
+        /* ** Hacks ** */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);  
+        }
+        
     </style>
     
 
@@ -118,29 +185,86 @@ Template Name: Front
 
     <div>
            
-            <div class="nav animated col-xs-12">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            AAA
-                        </div>
-                    </div>
-                </div>
-            </div>  
+        <div class="nav animated" id="nav-1">
+            <a class="deco-none link-1" href="#">Blog</a>
+            <img class="nav-logo" src="<?= bloginfo('template_directory'); ?>/img/logo.svg"/>
+            <a class="deco-none link-1" href="#">About</a>
+        </div>
             
-            <div class="row no-pad header-wrapper">
-                <div class="header animated">
-                <button id="btn-animate-pfolio" class="btn-hdr animated btn btn-primary outline">Portfolio</button>
-                <button id="btn-animate-blog" class="btn-hdr animated btn btn-primary outline">Blog</button>
+<!--            <div class="row no-pad header-wrapper">-->
+        <div class="header animated">
+
+        <div class="header-overlay">
+            <div>
+            <button id="btn-animate-pfolio" class="btn-hdr animated btn btn-primary outline">Portfolio</button>                     <br/>
+            <button id="btn-animate-blog" class="btn-hdr animated btn btn-primary outline">Blog</button>                          </div>
+        </div>
+
+        <div class="no-pad col-sm-6">
+              <img class="img-responsive" src="<?= bloginfo('template_directory'); ?>/img/front/left.png"/>
+        </div>
+        <div class="no-pad col-sm-6">
+              <img class="img-responsive" src="<?= bloginfo('template_directory'); ?>/img/front/right.png"/>
+        </div>
+        </div>
+<!--            </div>  -->
+            
+        <div class="container">
+        <div class="row portfolio animated">                
                 
-                <div class="no-pad col-sm-6">
-                      <img class="img-responsive" src="<?= bloginfo('template_directory'); ?>/img/front/left.png"/>
+            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+            <!-- article -->
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+                <div class="col-xs-3 col-sm-2 col-md-1">
+                <div class="date">
+                    <span class="day"><?php the_time('d'); ?></span>
+                    <span class="month"><?php the_time('M'); ?></span>
+                    <span class="year"><?php the_time('Y'); ?></span>
                 </div>
-                <div class="no-pad col-sm-6">
-                      <img class="img-responsive" src="<?= bloginfo('template_directory'); ?>/img/front/right.png"/>
                 </div>
+                
+                <div class="col-xs-9 col-sm-10 col-md-11">
+                <!-- post thumbnail -->
+                <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                        <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+                    </a>
+                <?php endif; ?>
+                <!-- /post thumbnail -->
+
+                <!-- post title -->
+                <h1>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                </h1>
+                <!-- /post title -->
+
+                <!-- post details -->
+                <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+                <span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+                <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+                <!-- /post details -->
+
+                <?php the_content(); // Dynamic Content ?>
+
+                <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+
+                <p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+
+                <p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+
+                <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+
+                <?php comments_template(); ?>
                 </div>
-            </div>        
+            </article>
+            <!-- /article -->
+
+        <?php endwhile; ?>           
+        <?php endif; ?>           
+        </div>      
+    </div>    
     </div>    
     
 <?php get_footer(); ?>

@@ -21,7 +21,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,9 +40,9 @@
      inkscape:window-height="705"
      id="namedview6"
      showgrid="true"
-     inkscape:zoom="2.765"
-     inkscape:cx="102.5"
-     inkscape:cy="100"
+     inkscape:zoom="1.9181287"
+     inkscape:cx="85.141772"
+     inkscape:cy="121.38906"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -55,23 +55,18 @@
      d="m 147.1187,15.313392 -93.652667,0 -46.8263397,84.968388 46.8263397,84.96839 93.652667,0 46.82636,-84.96839 z"
      id="path4"
      inkscape:connector-curvature="0"
-     style="fill:#ad4445;stroke:#000000;stroke-width:0;stroke-linejoin:round;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
-  <path
-     d="m 139.11262,25.160335 -79.459862,0 -39.729939,75.015005 39.729939,75.015 79.459862,0 39.72997,-75.015 z"
-     id="path4-6"
-     inkscape:connector-curvature="0"
-     style="fill:#d95050;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+     style="fill:#a24242;stroke:#000000;stroke-width:0;stroke-linejoin:round;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:20.46487045px;line-height:616.00008011%;font-family:sans-serif;letter-spacing:-7.6743269px;word-spacing:0px;fill:#ad4445;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-     x="66.41713"
-     y="68.582306"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:616.00008011%;font-family:sans-serif;letter-spacing:-15px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="-0.33207691"
+     y="94.314392"
      id="text4140"
      sodipodi:linespacing="616.00008%"
-     transform="matrix(0.85435122,0.50356224,-0.47431708,0.89091208,0,0)"><tspan
+     transform="matrix(0.84208974,0.53933744,-0.53933744,0.84208974,0,0)"><tspan
        sodipodi:role="line"
        id="tspan4142"
-       x="66.41713"
-       y="68.582306"
-       style="font-size:92.09191132px;line-height:616.00008011%;letter-spacing:-7.6743269px;fill:#ad4445;fill-opacity:1;">MC</tspan></text>
+       x="-0.33207691"
+       y="94.314392"
+       style="font-size:180px;line-height:616.00008011%;letter-spacing:-15px;fill:#ffffff;fill-opacity:1">MC</tspan></text>
 </svg>

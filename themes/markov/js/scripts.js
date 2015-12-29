@@ -8,18 +8,23 @@
     $(document).ready(function(){
         
         $('#btn-animate-pfolio').click( function(){
-            $('.header-wrapper .btn').hide();
-            $('.nav').addClass('zoomInDown');  
-            $('.header').addClass('flipOutX');
+            
+            $('.header .btn').hide();   //HIDE BUTTONS
+            $('.header').addClass('flipOutX').fadeOut("slow", function(){ 
+                $('.nav').fadeIn().addClass('zoomInDown');   //SHOW NAV
+                $('.portfolio').fadeIn().addClass('zoomInDown');   //SHOW NAV
+            });  //HIDE HEADER THINGY
+            $("body").css("background-image", "none");
+            
         });   
         
         setTimeout( function(){
-            $("#btn-animate-pfolio").fadeTo("slow",1);
+            $("#btn-animate-pfolio").fadeTo("slow",1).addClass('lightSpeedIn');
         }, 600);  
         
         setTimeout( function(){
-            $("#btn-animate-blog").fadeTo("slow",1);
-        }, 900);
+            $("#btn-animate-blog").fadeTo("slow",1).addClass('lightSpeedIn');
+        }, 1100);
                 
     });
 
