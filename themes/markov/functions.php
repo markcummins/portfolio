@@ -98,7 +98,7 @@ function html5blank_header_scripts()
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
-        wp_register_script('parallax', get_template_directory_uri() . '/js/lib/paraxify.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('parallax', get_template_directory_uri() . '/js/lib/jquery.parallax-scroll.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('parallax'); // Enqueue it!
         
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
@@ -106,23 +106,17 @@ function html5blank_header_scripts()
     }
 }
 
-// Load HTML5 Blank conditional scripts
-function html5blank_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
-    }
-}
-
 // Load HTML5 Blank styles
 function html5blank_styles()
 {   
-//    wp_register_style('paraxify', get_template_directory_uri() . '/css/paraxify.css', array(), '1.0', 'all');
-//    wp_enqueue_style('paraxify'); // Enqueue it!
-    
     wp_register_style('fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '1.0', 'all');
     wp_enqueue_style('fa'); // Enqueue it!
+    
+    wp_register_style('bs', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', 'all');
+    wp_enqueue_style('bs'); // Enqueue it!   
+    
+    wp_register_style('animate', '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('animate'); // Enqueue it!
     
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
@@ -347,11 +341,10 @@ function html5blankcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'create_post_type_blog'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -402,25 +395,25 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
+function create_post_type_blog()
 {
     register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_post_type('blog', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
+            'name' => __('Blogs', 'html5blank'), // Rename these to suit
+            'singular_name' => __('Blog Post', 'html5blank'),
             'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
+            'add_new_item' => __('Add New Blog Post', 'html5blank'),
             'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'edit_item' => __('Edit Blog Post', 'html5blank'),
+            'new_item' => __('New Blog Post', 'html5blank'),
+            'view' => __('View Post', 'html5blank'),
+            'view_item' => __('View Post', 'html5blank'),
+            'search_items' => __('Search Post', 'html5blank'),
+            'not_found' => __('No Posts found', 'html5blank'),
+            'not_found_in_trash' => __('No Posts found in Trash', 'html5blank')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

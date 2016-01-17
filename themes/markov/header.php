@@ -25,8 +25,8 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-			<!-- header -->
-			<header class="header clear" role="banner">
-
-			</header>
-			<!-- /header -->
+    <div class="nav animated" id="nav-1">
+        <a class="deco-none link-1" href="<?= get_post_type_archive_link( "blog" ); ?>">Blog</a>
+        <img class="nav-logo" src="<?= bloginfo('template_directory'); ?>/img/logo.svg"/>
+<!--        <a class="deco-none link-1" href="#">About</a>-->
+    </div>
