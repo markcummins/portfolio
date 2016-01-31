@@ -101,6 +101,9 @@ function html5blank_header_scripts()
         wp_register_script('parallax', get_template_directory_uri() . '/js/lib/jquery.parallax-scroll.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('parallax'); // Enqueue it!
         
+        wp_register_script('prism', get_template_directory_uri() . '/js/lib/prism.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('prism'); // Enqueue it!
+        
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
@@ -114,9 +117,12 @@ function html5blank_styles()
     
     wp_register_style('bs', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', 'all');
     wp_enqueue_style('bs'); // Enqueue it!   
+        
+    wp_register_style('prism', get_template_directory_uri() . '/css/prism.css', array(), '1.0', 'all');
+    wp_enqueue_style('prism'); // Enqueue it! 
     
     wp_register_style('animate', '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), '1.0', 'all');
-    wp_enqueue_style('animate'); // Enqueue it!
+    wp_enqueue_style('animate'); // Enqueue it!  
     
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!
