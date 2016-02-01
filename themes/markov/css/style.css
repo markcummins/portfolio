@@ -328,7 +328,6 @@ section .gist-meta {
     font-family: monospace, serif;
     font-size: 16px;
     color: gray;
-    white-space: nowrap;
 }
 single .post-meta{
     padding: .8em 0px;
